@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary Calculator</title>
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/responsee.css">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="css/lightcase.css">
+    <!-- CUSTOM STYLE -->      
+    <link rel="stylesheet" href="css/template-style.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,700,900&amp;subset=latin-ext" rel="stylesheet"> 
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script> 
+
+  </head>
+
+	
+	
+ 
+	 <body class="size-1280">
+    <!-- PREMIUM FEATURES BUTTON -->
+  	<a target="_blank" class="hide-s" href="../template/virtua-premium-responsive-business-template/" style="position:fixed;top:120px;right:-14px;z-index:10;"><img src="img/premium-features.png" alt=""></a>
+    <!-- HEADER -->
+    <header role="banner" class="position-absolute">    
+      <!-- Top Navigation -->
+      <nav class="background-transparent background-primary-dott full-width sticky">          
+        <div class="top-nav"> 
+          <!-- mobile version logo -->              
+          <div class="logo hide-l hide-xl hide-xxl">
+             <a href="index.html" class="logo">
+              <!-- Logo White Version -->
+              <img class="logo-white" src="img/logo.svg" alt="">
+              <!-- Logo Dark Version -->
+              <img class="logo-dark" src="img/logo-dark.svg" alt="">
+            </a>
+          </div>                  
+          <p class="nav-text"></p>
+          
+          <!-- left menu items -->
+          <div class="top-nav left-menu">
+             <ul class="right top-ul chevron">
+                <li><a href="index.html">Course</a></li>
+                 <li><a href="project.html">Project</a></li>
+                <li><a href="concepts.html">Concepts</a></li>
+              
+             </ul>
+          </div>
+          
+          <!-- logo -->
+          <ul class="logo-menu">
+            <a href="index.html" class="logo">
+              <!-- Logo White Version -->
+              <img class="logo-white" src="img/logo.svg" alt="">
+              <!-- Logo Dark Version -->
+              <img class="logo-dark" src="img/logo-dark.svg" alt="">
+            </a>
+          </ul>
+          
+          <!-- right menu items -->
+          <div class="top-nav right-menu">
+             <ul class="top-ul chevron">
+                
+                <li><a href="database.html">Databases</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="devTeam.html">Dev Team</a></li>
+             </ul> 
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- MAIN -->
+    <main role="main">    
+      <!-- Header -->
+      <header class="section-top-padding background-image text-center" style="background-image:url(img/img-05.jpg)">
+        <h1 class="text-extra-thin text-white text-s-size-30 text-m-size-40 text-size-50 text-line-height-1 margin-bottom-40 margin-top-130">
+          Binary Calculator!
+        </h1>
+       
+        <i class="slow icon-sli-arrow-down text-white margin-top-20 text-size-16"></i>
+        <!-- Image -->
+      
+        
+        <!-- dark full width arrow object -->
+        <img class="arrow-object" src="img/arrow-object-dark.svg" alt="">
+      </header>
+
+		   <!-- Section 3 -->
+        <section class="section background-dark">
+          <div class="s-12 m-12 l-4 center">
+
+            <h2>Binary Calculator</h2>
+      <h1 class="text-center" style="font-style: italic;">Binary Calculator</h1>
+                <hr />
+                <div id="output">Enter binary numbers</div>
+                <hr />
+                <div class="container mt-1">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn" onclick="input(&#39;0&#39;)">
+                                0</button>
+                            <button type="button" class="btn" onclick="input(&#39;1&#39;)">
+                                1</button>
+                            <button type="button" class="btn btn-danger float-right ml-2" onclick="cls()">
+                                AC</button>
+                            <button type="button" class="btn btn-warning float-right" onclick="backspace()">
+                                Backspace</button>  
+                                <button type="button" class="btn btn-info" onclick="input(&#39;+&#39;)">+</button>
+                                <button type="button" class="btn btn-info" onclick="input(&#39;-&#39;)">-</button>
+                                <button type="button" class="btn btn-info" onclick="input(&#39;*&#39;)">*</button>
+                                <button type="button" class="btn btn-info" onclick="input(&#39;/&#39;)">/</button>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center pt-2">
+                        <button type="button" class="btn btn-success" onclick="calculate()">Calculate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script type="text/javascript">
+            var scr = ""; //declared as global variable 
+
+            function calculate() {
+                if (scr.indexOf("+") != -1) {
+                    // If + is present in the string 
+                    // String obtained from scr is split 
+                    var num = scr.split("+");
+
+                    // The splitted string stores in num array 
+                    var x = parseInt(num[0], 2);
+
+                    // The num[0] and num[1] are the two binary  
+                    // numbers resp 
+                    var y = parseInt(num[1], 2);
+                    var sum = x + y;
+                    var ans = sum.toString(2);
+                } else if (scr.indexOf("-") != -1) {
+
+                    // If - is present in the string 
+                    var num = scr.split("-");
+                    var x = parseInt(num[0], 2);
+                    var y = parseInt(num[1], 2);
+                    var sub = x - y;
+                    var ans = sub.toString(2);
+                } else if (scr.indexOf("*") != -1) {
+
+                    // If * is present in the string 
+                    var num = scr.split("*");
+                    var x = parseInt(num[0], 2);
+                    var y = parseInt(num[1], 2);
+                    var mul = x * y;
+                    var ans = mul.toString(2);
+                } else if (scr.indexOf("/") != -1) {
+
+                    // If / is present in the string 
+                    var num = scr.split("/");
+                    var x = parseInt(num[0], 2);
+                    var y = parseInt(num[1], 2);
+                    var div = x / y;
+                    var ans = div.toString(2);
+                }
+                scr = ans;
+                document.getElementById("output").innerHTML = scr;
+            }
+
+            function input(ch) {
+                scr += ch;
+                document.getElementById("output").innerHTML = scr;
+            }
+
+            function backspace() {
+                var b = document.getElementById("output").innerHTML;
+                scr = b.substring(0, b.length - 1);
+                document.getElementById("output").innerHTML = scr;
+            }
+
+            function cls() {
+                scr = "";
+                document.getElementById("output").innerHTML = scr + "Enter binary numbers";
+            }
+        </script>
+</div>
+          </div>           
+        </section>
+     
+<!-- FOOTER -->
+    <footer>
+      <!-- Social -->
+      <div class="background-primary padding text-center">
+ <h3><a href="index.html">Home</a></h3>        
+<p>@Edlyn Garcia</p>                                                                     
+      </div>
+    </footer>
+    <script type="text/javascript" src="js/responsee.js"></script>
+    <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/template-scripts.js"></script> 
+  </body>
+</html>
